@@ -1,4 +1,4 @@
-def sieve(max)
+def primes(max)
 
   primes = (0..max).to_a
 
@@ -22,6 +22,6 @@ def sieve(max)
   primes.compact
 end
 
-def prime?(num)
-  sieve(num).include?(num)
+def prime?(i)
+  primes(i).include?(i)
 end
