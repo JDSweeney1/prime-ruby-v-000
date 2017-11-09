@@ -1,24 +1,20 @@
-def primes(max)
+def primes(i)
 
-  primes = (0..max).to_a
-
+  primes = (0..i).to_a
   primes[0] = primes[1] = nil
 
 
   counter = 0
-  primes.each do |p|
-
-    next unless p
-
-
-    break if p*p > max
+  primes.each do |int|
+    next unless int
+    break if int > i
     counter += 1
 
-    (p*p).step(max,p) { |m| primes[m] = nil }
+    (int*int).step(i,int) { |m| primes[m] = nil }
   end
 
 
-  puts "Solved for #{max} in #{counter} steps."
+  puts "Solved for #{i} in #{counter} steps."
   primes.compact
 end
 
